@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gan-cube-sample</title>
+  <script type="module" crossorigin src="/gan-cube-sample/assets/index-ytOBkwvO.js"></script>
+  <link rel="stylesheet" crossorigin href="/gan-cube-sample/assets/index-5u490yEA.css">
+</head>
+
+<body>
+
+  <div id="app">
+
+    <div id="cube"></div>
+
+    <div class="help">
+      Scramble cube to arbitrary state then press SPACE or touch Cube
+      to activate basic solving timer
+    </div>
+
+    <div class="info">
+
+      <label for="deviceName">Device Name</label>
+      <input id="deviceName" type="text" readonly value="-">
+
+      <label for="devicMAC">Device MAC</label>
+      <input id="deviceMAC" type="text" readonly value="-">
+
+      <label for="hardwareName">Hardware Name</label>
+      <input id="hardwareName" type="text" readonly value="-">
+
+      <label for="hardwareVersion">Hardware Version</label>
+      <input id="hardwareVersion" type="text" readonly value="-">
+
+      <label for="softwareVersion">Software Version</label>
+      <input id="softwareVersion" type="text" readonly value="-">
+
+      <label for="gyroSupported">Gyro Supported</label>
+      <input id="gyroSupported" type="text" readonly value="-">
+
+      <label for="batteryLevel">Battery</label>
+      <input id="batteryLevel" type="text" readonly value="0%">
+
+      <label for="skew">Clock Skew</label>
+      <input id="skew" type="text" readonly value="0%">
+
+      <label for="quaternion">Quaternion</label>
+      <input id="quaternion" type="text" readonly value="-">
+
+      <label for="velocity">Angular Velocity</label>
+      <input id="velocity" type="text" readonly value="-">
+
+    </div>
+
+    <div class="controls">
+      <button id="connect">Connect</button>
+      <button id="reset-state">Reset State</button>
+      <button id="reset-gyro">Reset Gyro</button>
+    </div>
+
+    <div id="timer">0.000</div>
+
+  </div>
+
+</body>
+
+</html>
