@@ -91,8 +91,8 @@ async function handleMoveEvent(event: GanCubeEvent) {
     if (timerState == "RUNNING") {
       solutionMoves.push(event);
     }
-    if (lastMoves.length > 50) {
-      lastMoves.slice(-50);
+    if (lastMoves.length > 1000) {
+      lastMoves = lastMoves.slice(-1000);
     }
     if (lastMoves.length > 10) {
       var skew = cubeTimestampCalcSkew(lastMoves);
