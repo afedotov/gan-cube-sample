@@ -135,13 +135,14 @@ function handleCubeEvent(event: GanCubeEvent) {
     $('#batteryLevel').val(event.batteryLevel + '%');
   } else if (event.type == "DISCONNECT") {
     twistyPlayer.alg = '';
+    $('.info input').val('- n/a -');
     $('#connect').html('Connect');
   }
 }
 
 const customMacAddressProvider: MacAddressProvider = async (device): Promise<string | null> => {
   return typeof device.watchAdvertisements == 'function' ? null :
-    prompt('Seems like your browser does not support Web Bluetooth watchAdvertisements() API. Enable following flag in Chrome:\n\nchrome://flags/#enable-web-bluetooth-new-permissions-backend\n\nor enter cube MAC address manually:');
+    prompt('Seems like your browser does not support Web Bluetooth watchAdvertisements() API. Enable following flag in Chrome:\n\nchrome://flags/#enable-experimental-web-platform-features\n\nor enter cube MAC address manually:');
 };
 
 $('#reset-state').on('click', async () => {
