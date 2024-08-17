@@ -198,7 +198,7 @@ function setTimerState(state: typeof timerState) {
       $('#timer').css('color', '#fff');
       var fittedMoves = cubeTimestampLinearFit(solutionMoves);
       var lastMove = fittedMoves.slice(-1).pop();
-      setTimerValue(lastMove ? lastMove.cubeTimestamp : 0);
+      setTimerValue(lastMove ? lastMove.cubeTimestamp! : 0);
       break;
   }
 }
