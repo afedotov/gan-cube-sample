@@ -5,19 +5,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>gan-cube-sample</title>
-  <script type="module" crossorigin src="/gan-cube-sample/assets/index-cdnJo_Ql.js"></script>
-  <link rel="stylesheet" crossorigin href="/gan-cube-sample/assets/index-CJLoQAjR.css">
+  <script type="module" crossorigin src="/gan-cube-sample/assets/index-C8trlcjM.js"></script>
+  <link rel="stylesheet" crossorigin href="/gan-cube-sample/assets/index-DX22opEO.css">
 </head>
 
 <body>
 
   <div id="app">
 
-    <div id="cube"></div>
-
     <div class="help">
       Scramble cube to arbitrary state then press SPACE or touch Cube
       to activate basic solving timer
+    </div>
+
+    <div id="cube"></div>
+
+    <div class="controls">
+      <button id="connect">Connect</button>
+      <button id="reset-state">Reset State</button>
+      <button id="reset-gyro">Reset Gyro</button>
     </div>
 
     <div class="info">
@@ -37,6 +43,9 @@
       <label for="softwareVersion">Software Version</label>
       <input id="softwareVersion" type="text" readonly value="- n/a -">
 
+      <label for="productDate">Product Date</label>
+      <input id="productDate" type="text" readonly value="- n/a -">
+
       <label for="gyroSupported">Gyro Supported</label>
       <input id="gyroSupported" type="text" readonly value="- n/a -">
 
@@ -52,12 +61,6 @@
       <label for="velocity">Angular Velocity</label>
       <input id="velocity" type="text" readonly value="- n/a -">
 
-    </div>
-
-    <div class="controls">
-      <button id="connect">Connect</button>
-      <button id="reset-state">Reset State</button>
-      <button id="reset-gyro">Reset Gyro</button>
     </div>
 
     <div id="timer">0:00.000</div>
