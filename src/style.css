@@ -19,6 +19,10 @@ body {
   height: 15em;
 }
 
+.controls {
+  margin-left: 0.5em;
+}
+
 .controls button {
   color: white;
   background-color: #333;
@@ -65,9 +69,9 @@ body {
 #timer {
   position: absolute;
   font-size: 2em;
-  top: 8.2em;
-  left: 0.8em;
-  width: 7em;
+  top: 9em;
+  left: 0.5em;
+  width: 8.3em;
   padding: 1em;
   border: 1px solid silver;
   border-radius: 1em;
@@ -81,7 +85,7 @@ body {
 }
 
 .help {
-  color: #333;
+  color: #ffffff80;
   font-family: Arial, Helvetica, sans-serif;
   width: 20rem;
   font-size: 0.8em;

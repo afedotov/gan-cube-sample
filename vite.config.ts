@@ -5,6 +5,12 @@ const workerImportMetaUrlRE = /\bnew\s+(?:Worker|SharedWorker)\s*\(\s*(new\s+URL
 
 export default defineConfig({
     base: "/gan-cube-sample",
+    build: {
+        chunkSizeWarningLimit: 2048
+    },
+    optimizeDeps: {
+        exclude: ["cubing"]
+    },
     worker: {
         format: 'es',
         plugins: () => [

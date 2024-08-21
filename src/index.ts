@@ -119,7 +119,8 @@ async function handleFaceletsEvent(event: GanCubeEvent) {
 }
 
 function handleCubeEvent(event: GanCubeEvent) {
-  console.log("GanCubeEvent", event);
+  if (event.type != "GYRO")
+    console.log("GanCubeEvent", event);
   if (event.type == "GYRO") {
     handleGyroEvent(event);
   } else if (event.type == "MOVE") {
@@ -127,9 +128,10 @@ function handleCubeEvent(event: GanCubeEvent) {
   } else if (event.type == "FACELETS") {
     handleFaceletsEvent(event);
   } else if (event.type == "HARDWARE") {
-    $('#hardwareName').val(event.hardwareName);
-    $('#hardwareVersion').val(event.hardwareVersion);
-    $('#softwareVersion').val(event.softwareVersion);
+    $('#hardwareName').val(event.hardwareName || '- n/a -');
+    $('#hardwareVersion').val(event.hardwareVersion || '- n/a -');
+    $('#softwareVersion').val(event.softwareVersion || '- n/a -');
+    $('#productDate').val(event.productDate || '- n/a -');
     $('#gyroSupported').val(event.gyroSupported ? "YES" : "NO");
   } else if (event.type == "BATTERY") {
     $('#batteryLevel').val(event.batteryLevel + '%');
@@ -166,8 +168,8 @@ $('#connect').on('click', async () => {
     conn = await connectGanCube(customMacAddressProvider);
     conn.events$.subscribe(handleCubeEvent);
     await conn.sendCubeCommand({ type: "REQUEST_HARDWARE" });
-    await conn.sendCubeCommand({ type: "REQUEST_BATTERY" });
     await conn.sendCubeCommand({ type: "REQUEST_FACELETS" });
+    await conn.sendCubeCommand({ type: "REQUEST_BATTERY" });
     $('#deviceName').val(conn.deviceName);
     $('#deviceMAC').val(conn.deviceMAC);
     $('#connect').html('Disconnect');
