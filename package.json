@@ -16,7 +16,7 @@
     "@types/jquery": "^3.5.30",
     "@types/web-bluetooth": "^0.0.20",
     "cubing": "^0.51.0",
-    "gan-web-bluetooth": "^3.0.1",
+    "gan-web-bluetooth": "^3.0.2",
     "jquery": "^3.7.1",
     "rxjs": "^7.8.1"
   }
