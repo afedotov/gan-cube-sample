@@ -124,6 +124,7 @@ function handleCubeEvent(event: GanCubeEvent) {
   if (event.type == "GYRO") {
     handleGyroEvent(event);
   } else if (event.type == "MOVE") {
+    console.log(event.facelets);
     handleMoveEvent(event);
   } else if (event.type == "FACELETS") {
     handleFaceletsEvent(event);
